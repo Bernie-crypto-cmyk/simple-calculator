@@ -1,8 +1,12 @@
 const display = document.querySelector('#display');
+const answer = document.querySelector('#answer');
 
 const backspace = document.querySelector('#backspace');
 const plus = document.querySelector('#plus');
 const clear = document.querySelector('#clear');
+const minus = document.querySelector('#minus');
+const multiply = document.querySelector('#multiply');
+const divide = document.querySelector('#divide');
 const one = document.getElementById('1');
 const two = document.getElementById('2');
 const three = document.getElementById('3');
@@ -21,6 +25,7 @@ let currentValue = "";
 clear.addEventListener('click', () =>{
     currentValue = "";
     display.textContent = currentValue;
+    answer.textContent = currentValue;
 });
 
 backspace.addEventListener('click', () =>{
@@ -29,7 +34,22 @@ backspace.addEventListener('click', () =>{
 });
 
 plus.addEventListener('click', () =>{
-    currentValue += " + ";
+    currentValue += "+";
+    display.textContent = currentValue;
+});
+
+minus.addEventListener('click', () =>{
+    currentValue += "-";
+    display.textContent = currentValue;
+});
+
+multiply.addEventListener('click', () =>{
+    currentValue += "×";
+    display.textContent = currentValue;
+});
+
+divide.addEventListener('click', () =>{
+    currentValue += "÷";
     display.textContent = currentValue;
 });
 
@@ -89,9 +109,10 @@ dot.addEventListener('click', () =>{
 });
 
 equals.addEventListener('click', () =>{
+    let correctedCurrentValue = currentValue.replace(/×/g, '*').replace(/÷/g, '/');
     try{
-        let result = eval(currentValue);
-        display.textContent = result;
+        let result = eval(correctedCurrentValue);
+        answer.textContent = result;
         currentValue = result.toString();
     }
     catch(error){

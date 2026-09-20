@@ -42,6 +42,36 @@ body{
     padding: 10px;
      background-color: #1677FF;
 }
+.minus-icon{
+    height: 30px;
+    width: 30px;
+}
+#minus{
+    border: solid 1px #28486D;
+    padding: 10px;
+    flex: 1;
+    background-color: #1677FF;
+}
+.multiply-icon{
+    height: 30px;
+    width: 30px;
+}
+#multiply{
+    border: solid 1px #28486D;
+    padding: 10px;
+    flex: 1;
+    background-color: #1677FF;
+}
+.divide-icon{
+    height: 30px;
+    width: 30px;
+}
+#divide{
+    border: solid 1px #28486D;
+    padding: 10px;
+    flex: 1;
+    background-color: #1677FF;
+}
 
 .header{
     display: flex;
@@ -54,7 +84,10 @@ body{
     font-size: 1.5rem;
     font-weight: 500;
 }
-.display{
+.display-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 10px;
     margin-bottom: 10px;
     border: solid 1px #28486D;
@@ -63,12 +96,17 @@ body{
     font-size: 2rem;
     overflow: hidden;
 }
+#answer{
+    display: flex;
+    justify-content: end;
+}
 .operation-wrap{
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
     font-size: 1.2rem;
     font-weight: 500;
 }
